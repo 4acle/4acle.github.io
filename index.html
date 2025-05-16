@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connor Narey – Portfolio</title>
+  <style>
+    html, body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    }
+
+    canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    }
+
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1, h2, p, a {
+      color: white;
+    }
+
+    .project {
+      margin-bottom: 30px;
+    }
+
+    .project-title {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    a {
+      color: #63b3ed;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #444;
+      margin: 30px 0;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="particleCanvas"></canvas>
+
+<div class="content">
+  <h1>Connor Narey</h1>
+  <p><strong>Computer Science Graduate | Developer | Tech Problem Solver</strong></p>
+  <p>
+    📍 Holyoke, MA &nbsp; | &nbsp; 
+    <a href="mailto:cjnarey@gmail.com">cjnarey@gmail.com</a> &nbsp; | &nbsp; 
+    <a href="https://github.com/4acle" target="_blank">GitHub</a>
+  </p>
+
+  <hr>
+
+  <h2>Projects</h2>
+
+  <div class="project">
+    <div class="project-title">Libre Food Pantry App</div>
+    <p><em>Vue.js, JavaScript, GitLab, Agile</em></p>
+    <p>Contributed to a university food pantry app redesign. Helped refine UI, develop features, and participate in Agile sprints and code reviews.</p>
+  </div>
+
+  <div class="project">
+    <div class="project-title">2D Dungeon Crawler Game</div>
+    <p><em>Python, Pygame</em></p>
+    <p>Built core gameplay mechanics and puzzle logic in a top-down dungeon game. Managed scope and delivery over a 12-week sprint.</p>
+  </div>
+
+  <div class="project">
+    <div class="project-title">Home Automation IoT System</div>
+    <p><em>Python, MQTT, BeagleBone Black</em></p>
+    <p>Developed a remote-controlled system for home lighting and temperature monitoring. Integrated MQTT for lightweight messaging between devices.</p>
+  </div>
+
+  <div class="project">
+    <div class="project-title">Records Database Management</div>
+    <p><em>MySQL, SQL Procedures</em></p>
+    <p>Engineered a relational database for managing inventory and customer data. Optimized workflows using stored procedures and views.</p>
+  </div>
+
+  <hr>
+  <p>Want to get in touch? <a href="mailto:cjnarey@gmail.com">Let’s connect.</a></p>
+</div>
+
+<script>
+  const canvas = document.getElementById('particleCanvas');
+  const ctx = canvas.getContext('2d');
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const particles = [];
+
+  for (let i = 0; i < 100; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5
+    });
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'white';
+    for (let p of particles) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+    }
+    requestAnimationFrame(drawParticles);
+  }
+
+  drawParticles();
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
+
+</body>
+</html>
