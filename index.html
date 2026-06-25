@@ -6,59 +6,108 @@
   <title>Connor Narey – Portfolio</title>
   <style>
     html, body {
-    margin: 0;
-    padding: 0;
-    background: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: #e8e8e8;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.55;
     }
 
     canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
     }
-
 
     .content {
       position: relative;
       z-index: 1;
-      padding: 40px;
-      max-width: 800px;
+      padding: 48px 40px 64px;
+      max-width: 760px;
       margin: auto;
     }
 
-    h1, h2, p, a {
-      color: white;
+    h1 {
+      font-size: 2.4em;
+      margin: 0 0 6px;
+      letter-spacing: 0.5px;
     }
 
-    .project {
-      margin-bottom: 30px;
-    }
-
-    .project-title {
+    .tagline {
+      color: #9fb8d8;
       font-weight: bold;
-      font-size: 1.1em;
+      margin: 0 0 14px;
+    }
+
+    .meta {
+      color: #b8b8b8;
+      font-size: 0.95em;
+      margin: 0 0 8px;
+    }
+
+    h2 {
+      font-size: 1.25em;
+      margin: 36px 0 4px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #2a3a52;
+      color: #ffffff;
+    }
+
+    .skills {
+      margin: 14px 0 0;
+    }
+    .skills p {
+      margin: 6px 0;
+      font-size: 0.95em;
+    }
+    .skills strong {
+      color: #9fb8d8;
+    }
+
+    .item {
+      margin: 22px 0 0;
+    }
+
+    .item-title {
+      font-weight: bold;
+      font-size: 1.08em;
+      color: #ffffff;
+    }
+
+    .item-sub {
+      color: #9aa7b8;
+      font-style: italic;
+      font-size: 0.9em;
+      margin: 2px 0 8px;
+    }
+
+    .item p {
+      margin: 0 0 8px;
     }
 
     a {
       color: #63b3ed;
       text-decoration: none;
     }
+    a:hover { text-decoration: underline; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    .links a { margin-right: 14px; font-size: 0.92em; }
 
     hr {
       border: none;
-      border-top: 1px solid #444;
-      margin: 30px 0;
+      border-top: 1px solid #2a3a52;
+      margin: 36px 0 0;
+    }
+
+    .footer {
+      margin-top: 36px;
+      color: #b8b8b8;
     }
   </style>
 </head>
@@ -68,57 +117,73 @@
 
 <div class="content">
   <h1>Connor Narey</h1>
-  <p><strong>Computer Science Graduate | Developer | Tech Problem Solver</strong></p>
-  <p>
-    📍 Holyoke, MA &nbsp; | &nbsp; 
-    <a href="mailto:cjnarey@gmail.com">cjnarey@gmail.com</a> &nbsp; | &nbsp; 
-    <a href="https://github.com/4acle" target="_blank">GitHub</a>
+  <p class="tagline">IT Support &amp; Field Technician | Computer Science Graduate</p>
+  <p class="meta">
+    Holyoke, MA &nbsp;|&nbsp;
+    <a href="mailto:cjnarey@gmail.com">cjnarey@gmail.com</a> &nbsp;|&nbsp;
+    <a href="https://github.com/4acle" target="_blank">github.com/4acle</a>
   </p>
 
-  <hr>
+  <h2>About</h2>
+  <p>Field support technician with hands-on experience supporting 25+ office locations and a background building database and web applications. I like solving problems directly: diagnosing the issue, fixing it, and making sure the person on the other end can get back to work.</p>
+
+  <h2>Experience</h2>
+  <div class="item">
+    <div class="item-title">Field Support Technician — H&amp;R Block</div>
+    <div class="item-sub">Springfield, MA &nbsp;|&nbsp; Aug 2024 – June 2025</div>
+    <p>Provided Tier 1 IT support across 25+ office locations via phone, chat, and onsite visits, resolving hardware, software, and connectivity issues at a 12–18 minute average handle time. Imaged and provisioned Windows workstations, laptops, POS systems, and peripherals during seasonal deployments. Managed service tickets in Salesforce and supported the migration of company files from on-premises servers to cloud storage.</p>
+  </div>
+
+  <h2>Skills</h2>
+  <div class="skills">
+    <p><strong>Support:</strong> Hardware &amp; OS diagnostics, software installation, printer setup, password resets, user account management, remote &amp; onsite troubleshooting</p>
+    <p><strong>Systems:</strong> Windows (XP–11), basic Windows Server, Linux, Microsoft 365 (Outlook, Teams, OneDrive)</p>
+    <p><strong>Networking:</strong> TCP/IP, DNS, LAN/WAN, VPN, basic router setup</p>
+    <p><strong>Tools:</strong> Salesforce ticketing, workstation imaging &amp; provisioning</p>
+    <p><strong>Development:</strong> Python, SQL, JavaScript, Vue.js, MySQL, Git, GitLab</p>
+  </div>
 
   <h2>Projects</h2>
 
-<div class="project">
-  <div class="project-title">Job Tracker API</div>
-  <p><em>Node.js, Express, MySQL</em></p>
-  <p>REST API to manage job applications. Supports CRUD operations and status tracking for job leads.</p>
-  <a href="https://github.com/4acle/job-tracker-api" target="_blank">View Code</a>
-</div>
+  <div class="item">
+    <div class="item-title">Job Tracker API</div>
+    <div class="item-sub">Node.js, Express, MySQL</div>
+    <p>REST API for managing job applications through their full lifecycle: adding leads, updating status, and tracking outcomes. Supports full CRUD operations backed by a MySQL database.</p>
+    <div class="links"><a href="https://github.com/4acle/job-tracker-api" target="_blank">View Code</a></div>
+  </div>
 
-<div class="project">
-  <div class="project-title">Libre Food Pantry App</div>
-  <p><em>Vue.js, JavaScript, GitLab, Agile</em></p>
-  <p>Contributed to the frontend of a food pantry guest management system. Implemented UI updates and collaborated in team-based sprints.</p>
-  <a href="https://gitlab.com/LibreFoodPantry/client-solutions/bear-necessities-market/guestinfosystem/guestinfofrontend" target="_blank">View Code</a>
-</div>
+  <div class="item">
+    <div class="item-title">Libre Food Pantry App</div>
+    <div class="item-sub">Vue.js, JavaScript, GitLab, Agile</div>
+    <p>Contributed to the frontend of a guest management system used by a real university food pantry. Built and refined UI features and worked in Agile sprints with code review and a shared GitLab workflow.</p>
+    <div class="links"><a href="https://gitlab.com/LibreFoodPantry/client-solutions/bear-necessities-market/guestinfosystem/guestinfofrontend" target="_blank">View Code</a></div>
+  </div>
 
-<div class="project">
-  <div class="project-title">Team-Built 2D Dungeon Crawler</div>
-  <p><em>Python, Pygame, Project Planning</em></p>
-  <p>Collaborated on a top-down dungeon crawler featuring puzzles, enemies, and level design. Contributed core game logic and mechanics while coordinating with teammates on scoped milestones and budget tracking.</p>
-  <a href="https://gitlab.com/untitled-project-team/untitled-project/-/tree/187d4b5d7b87d5501e6a1d83a9b4fec22d265fcd/" target="_blank">View Code</a> | 
-  <a href="https://app.asana.com/1/1153560690610136/project/1202900961261910/timeline/1205116619604139" target="_blank">View Milestones</a>
-</div>
+  <div class="item">
+    <div class="item-title">Team-Built 2D Dungeon Crawler</div>
+    <div class="item-sub">Python, Pygame</div>
+    <p>Top-down dungeon crawler with puzzles, enemies, and multiple levels. Built the core game logic and mechanics while coordinating scope and milestones with a team over a 12-week project.</p>
+    <div class="links">
+      <a href="https://gitlab.com/untitled-project-team/untitled-project/-/tree/187d4b5d7b87d5501e6a1d83a9b4fec22d265fcd/" target="_blank">View Code</a>
+      <a href="https://app.asana.com/1/1153560690610136/project/1202900961261910/timeline/1205116619604139" target="_blank">View Milestones</a>
+    </div>
+  </div>
 
+  <div class="item">
+    <div class="item-title">IoT Home Automation System</div>
+    <div class="item-sub">Python, MQTT, C++, BeagleBone Black</div>
+    <p>Embedded system that controls lights and reads temperature sensors over MQTT. Wrote C++ to toggle GPIO outputs in real time and used Python with Adafruit IO for remote monitoring and alerting.</p>
+    <div class="links"><a href="https://github.com/4acle/nareyProject" target="_blank">View Code</a></div>
+  </div>
 
-<div class="project">
-  <div class="project-title">IoT Home Automation System</div>
-  <p><em>Python, MQTT, BeagleBone Black</em></p>
-  <p>Remote-controlled lights and temperature sensors using MQTT messaging. Built with low-level hardware integration.</p>
-  <a href="https://github.com/4acle/nareyProject" target="_blank">View Code</a>
-</div>
-
-<div class="project">
-  <div class="project-title">Records DB Management</div>
-  <p><em>MySQL, Stored Procedures</em></p>
-  <p>Designed and documented a relational schema for managing inventory and customers. Used SQL procedures for efficiency.</p>
-  <p><em>Note:</em> Project documentation includes schema images and implementation summary.</p>
-</div>
-
+  <div class="item">
+    <div class="item-title">Records Database System</div>
+    <div class="item-sub">MySQL, Stored Procedures</div>
+    <p>Relational database for managing inventory and customer records. Designed the schema and wrote stored procedures and views to keep queries fast and data consistent.</p>
+  </div>
 
   <hr>
-  <p>Want to get in touch? <a href="mailto:cjnarey@gmail.com">Let’s connect.</a></p>
+  <p class="footer">Want to get in touch? <a href="mailto:cjnarey@gmail.com">Let's connect.</a></p>
 </div>
 
 <script>
@@ -132,7 +197,8 @@
   const particleCount = 200;
   const mouse = { x: null, y: null };
   const repulsionRadius = 100;
-  const repulsionStrength = 3;
+  const repulsionStrength = 0.6;
+  const maxSpeed = 1.8;
 
   const colors = [
     '255,255,255',
@@ -166,36 +232,39 @@
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let p of particles) {
-      // Repulsion
       if (mouse.x !== null && mouse.y !== null) {
         const dx = p.x - mouse.x;
         const dy = p.y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < repulsionRadius) {
           const angle = Math.atan2(dy, dx);
-          const force = (1 - dist / repulsionRadius) * repulsionStrength;
+          // smooth falloff so particles right at the cursor don't get a force spike
+          const falloff = (1 - dist / repulsionRadius);
+          const force = falloff * falloff * repulsionStrength;
           p.dx += Math.cos(angle) * force;
           p.dy += Math.sin(angle) * force;
         }
       }
 
-      // Apply velocity
       p.x += p.dx;
       p.y += p.dy;
 
-      // Gentle drift randomness
       p.dx += (Math.random() - 0.5) * 0.05;
       p.dy += (Math.random() - 0.5) * 0.05;
 
-      // Velocity damping
-      p.dx *= 0.98;
-      p.dy *= 0.98;
+      p.dx *= 0.94;
+      p.dy *= 0.94;
 
-      // Screen bounds bounce
+      // cap speed so repulsion can't accelerate particles indefinitely
+      const speed = Math.sqrt(p.dx * p.dx + p.dy * p.dy);
+      if (speed > maxSpeed) {
+        p.dx = (p.dx / speed) * maxSpeed;
+        p.dy = (p.dy / speed) * maxSpeed;
+      }
+
       if (p.x <= 0 || p.x >= canvas.width) p.dx *= -1;
       if (p.y <= 0 || p.y >= canvas.height) p.dy *= -1;
 
-      // Twinkle
       p.alpha += p.fadeDir * p.fadeSpeed;
       if (p.alpha >= 1) {
         p.alpha = 1;
@@ -205,7 +274,6 @@
         p.fadeDir = 1;
       }
 
-      // Draw
       ctx.beginPath();
       ctx.fillStyle = `rgba(${p.color}, ${p.alpha.toFixed(2)})`;
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
@@ -222,9 +290,6 @@
     canvas.height = window.innerHeight;
   });
 </script>
-
-
-
 
 </body>
 </html>
